@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://brandmauer.github.io/filarix/">
 <meta property="og:title" content="Filarix — мощный файловый менеджер для Android">
 <meta property="og:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta property="og:image" content="https://brandmauer.github.io/filarix/img/og-icon.png">
+<meta property="og:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=2">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filarix — мощный файловый менеджер для Android">
 <meta name="twitter:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta name="twitter:image" content="https://brandmauer.github.io/filarix/img/og-icon.png">
+<meta name="twitter:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=2">
 <meta name="theme-color" content="#0b0805">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -88,7 +88,7 @@ section{position:relative}
 .step p{color:var(--dim);max-width:30em;margin-bottom:14px}
 .step ul{list-style:none;padding:0;margin-top:10px;max-width:32em}
 .step li{padding:13px 0;border-top:1px solid var(--ln);font-size:15.5px}.step li b{color:var(--gold2);font-weight:600}
-.pin .phone{transition:transform .3s}
+.hdots{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);display:flex;gap:4px;z-index:12}.hdots button{width:22px;height:22px;padding:0;border:0;background:transparent;cursor:pointer;position:relative}.hdots button:before{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:99px;background:rgba(245,236,221,.28);transition:width .4s,margin .4s,background .4s}.hdots button.on:before{width:24px;margin-left:-12px;background:var(--gold)}.pin .phone{transition:transform .3s}
 /* AB */
 .abx{padding:8vh 5vw;background:linear-gradient(var(--bg),var(--bg2),var(--bg));text-align:center}
 .abx h2{font-size:clamp(40px,6vw,88px);max-width:14em;margin:0 auto 20px}
@@ -319,8 +319,18 @@ sound:'Шумомер: уровень в дБ, максимум и график.
 vibro:'Виброметр: вибрация по трём осям, частота и пик.'};
 function phone(el,keys){el.innerHTML=`<div class="scr">${keys.map((k,i)=>`<img src="img/sc.${k}.jpg" alt="${SC[k][0]}" data-k="${k}" ${i?'loading="lazy"':''} class="${i?'':'on'}">`).join('')}</div>`+keys.map((k,i)=>`<div class="hl ${i?'':'on'}" data-k="${k}">${SC[k][1].map(h=>`<button type="button" class="hs" style="left:${h[0]}%;top:${h[1]}%" data-h="${h[2]}" data-t="${h[3]}" aria-label="${h[2]}: ${h[3]}"></button>`).join('')}</div>`).join('')}
 function show(el,k){el.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('on',e.dataset.k==k))}
-phone($('#hp'),['grid']);phone($('#sp'),['main','drawer','memory','play','imgedit']);
-$('#gs').innerHTML=[['writer','Карточки'],['playlist','Плейлист'],['gallery','Галерея'],['activity','Activity Manager'],['app','Приложения'],['calc','Калькулятор'],['calendar','Календарь'],['birthday','Дни рождения'],['cards','Дисконтные карты'],['converter','Конвертер'],['bmi','Индекс массы тела'],['ruler','Линейка'],['scaner','Сканер кодов'],['sound','Шумомер'],['vibro','Виброметр']].map(a=>`<figure><div class="phone" data-g="${a[0]}"></div><figcaption>${a[1]}</figcaption></figure>`).join('');
+const HK=['grid','main','drawer','memory','play','imgedit','gallery'];phone($('#hp'),HK);
+(function(){const hp=$('#hp'),d=document.createElement('div');d.className='hdots';d.innerHTML=HK.map((k,i)=>`<button type="button" aria-label="${SC[k][0]}"${i?'':' class="on"'}></button>`).join('');hp.appendChild(d);
+let i=0,t=null,hold=false;const go=n=>{i=(n+HK.length)%HK.length;show(hp,HK[i]);[...d.children].forEach((b,j)=>b.classList.toggle('on',j==i));hideTip()};
+const run=()=>{clearInterval(t);if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;t=setInterval(()=>{if(!hold&&!document.hidden)go(i+1)},5200)};
+d.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;go([...d.children].indexOf(b));run()});
+hp.addEventListener('pointerenter',()=>hold=true);hp.addEventListener('pointerleave',()=>{hold=false;run()});
+hp.addEventListener('focusin',()=>hold=true);hp.addEventListener('focusout',()=>{hold=false});
+let sx=null;hp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;hold=true},{passive:true});
+hp.addEventListener('touchend',e=>{if(sx!=null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));run()}}sx=null;setTimeout(()=>hold=false,4000)},{passive:true});
+run()})();
+phone($('#sp'),['main','drawer','memory','play','imgedit']);
+$('#gs').innerHTML=[['writer','Карточки'],['playlist','Плейлист'],['gallery','Галерея'],['cards','Дисконтные карты'],['calc','Калькулятор'],['app','Приложения'],['calendar','Календарь'],['birthday','Дни рождения'],['activity','Activity Manager'],['converter','Конвертер'],['bmi','Индекс массы тела'],['ruler','Линейка'],['scaner','Сканер кодов'],['sound','Шумомер'],['vibro','Виброметр']].map(a=>`<figure><div class="phone" data-g="${a[0]}"></div><figcaption>${a[1]}</figcaption></figure>`).join('');
 $$('[data-g]').forEach(e=>phone(e,[e.dataset.g]));
 /* tooltips */
 const tip=$('#tip'),hov=matchMedia('(hover:none)').matches;let cur=null;
@@ -367,10 +377,13 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
 const vis=h=>{const r=h.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth};
 const fire=x=>{if(x.classList.contains('pu'))return;x.classList.add('pu');setTimeout(()=>x.classList.remove('pu'),2900)};
 let lastG=null;
+let tk=0,tipDone=false;
+const autoTip=b=>{showTip(b);setTimeout(()=>{if(cur===b)hideTip()},2600)};
 setInterval(()=>{
-$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;fire(hs[h._i])});
+tk++;tipDone=false;
+$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;if(tk%3)return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;const b=hs[h._i];fire(b);const ph=h.closest('.phone');if(!tipDone&&!hov&&!(ph&&ph.matches(':hover'))){tipDone=true;autoTip(b)}});
 let g=$$('#gs .hl').filter(h=>vis(h)&&!h.querySelector('.hs.pu'));if(g.length>1&&lastG)g=g.filter(h=>h!==lastG);
-if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length)fire(hs[Math.random()*hs.length|0])}
+if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length){const b=hs[Math.random()*hs.length|0];fire(b);if(tk%3==1&&!tipDone&&!hov&&!$('#gs').matches(':hover')){tipDone=true;autoTip(b)}}}
 },1000)}
 /* ambient music: starts silent, rises very slowly */
 (function(){const au=$('#bgm'),sb=$('#snd'),TARGET=.1,RAMP=60000,TICK=400;let muted=false,prog=0,f=0,g=null,ok=false;
