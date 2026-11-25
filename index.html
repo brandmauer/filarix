@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://brandmauer.github.io/filarix/">
 <meta property="og:title" content="Filarix — мощный файловый менеджер для Android">
 <meta property="og:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta property="og:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=2">
+<meta property="og:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=4">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filarix — мощный файловый менеджер для Android">
 <meta name="twitter:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta name="twitter:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=2">
+<meta name="twitter:image" content="https://brandmauer.github.io/filarix/img/og-icon.png?v=4">
 <meta name="theme-color" content="#0b0805">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -52,7 +52,7 @@ a{color:inherit}
 #bar{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0;transform:scaleX(0);background:linear-gradient(90deg,var(--ind),var(--gold));z-index:50}
 #glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(217,164,65,.13),transparent);pointer-events:none;z-index:1;left:-999px;top:0}
 nav{position:fixed;inset:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 5vw 20px;z-index:40;background:linear-gradient(var(--bg),transparent)}
-nav b{display:flex;align-items:center;gap:10px;white-space:nowrap;font:600 26px 'Cormorant Garamond',serif;letter-spacing:.02em}
+nav b{display:flex;align-items:center;gap:10px;white-space:nowrap;font:600 28px 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase}
 .btn{display:inline-block;padding:14px 30px;border-radius:99px;background:linear-gradient(120deg,var(--gold2),var(--gold));color:#1a1408;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 10px 40px rgba(217,164,65,.25);transition:transform .3s,box-shadow .3s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(217,164,65,.4)}
 .btn.o{background:none;color:var(--ink);border:1px solid var(--ln);box-shadow:none;padding:10px 22px}
@@ -115,7 +115,7 @@ footer{padding:30px 5vw 40px;color:#8a7a63;font-size:13px;text-align:center;bord
 .story{grid-template-columns:1fr;gap:0}.pin{height:46vh;top:0;z-index:5;background:linear-gradient(var(--bg) 85%,transparent);place-items:start center;padding-top:64px}.pin .phone{transform:scale(.48);transform-origin:top center}
 .step{min-height:50vh;justify-content:flex-start;padding-top:3vh}.facts{gap:16px}.abx{padding:6vh 5vw}.man{padding:6vh 5vw}.cta{padding:6vh 5vw 4vh}
 .facts{grid-template-columns:1fr 1fr}.more{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero .in,.hero .ph{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.orb,.chip,.hero .in{animation:none!important;transition:none!important}.hero .in,.hero .ph{opacity:1;transform:none}}
 /* --- v2 --- */
 .nr{display:flex;align-items:center;gap:10px}
 .nr .btn.o{display:inline-flex;align-items:center;white-space:nowrap}
@@ -154,7 +154,7 @@ footer a{color:var(--dim)}
 @media(max-width:700px){.x2{display:none}}
 @media(max-width:480px){nav{padding-left:4vw;padding-right:4vw}nav b{font-size:21px}.nr{gap:7px}.nr .btn.o{height:38px;padding:0 13px;font-size:13px}.sb{width:38px;height:38px}}
 @media(max-width:370px){nav b{display:none}}
-@media(prefers-reduced-motion:reduce){.hs:before{animation:none!important}}
+
 
 
 /* equal buttons */
@@ -167,7 +167,7 @@ footer a{color:var(--dim)}
 </style>
 <style>nav b img{border-radius:7px}.step li,.step p{max-width:34em}.facts span{max-width:16em;display:block}.gs figure{width:240px}</style></head><body>
 <div id="bar"></div><div id="glow"></div><div id="tip" role="tooltip"></div>
-<nav><b><img src="img/favicon-32.png" width="28" height="28" alt="">Filarix</b><div class="nr">
+<nav><b><img src="img/favicon-32.png" width="28" height="28" alt="">FILARIX</b><div class="nr">
 <button id="snd" class="sb" type="button" aria-label="Выключить музыку" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="w" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button>
 <a class="btn o" href="#support">Поддержать<span class="x2"> разработчика</span></a><a class="btn" href="#dl">Скачать</a></div></nav>
 
@@ -320,14 +320,12 @@ vibro:'Виброметр: вибрация по трём осям, частот
 function phone(el,keys){el.innerHTML=`<div class="scr">${keys.map((k,i)=>`<img src="img/sc.${k}.jpg" alt="${SC[k][0]}" data-k="${k}" ${i?'loading="lazy"':''} class="${i?'':'on'}">`).join('')}</div>`+keys.map((k,i)=>`<div class="hl ${i?'':'on'}" data-k="${k}">${SC[k][1].map(h=>`<button type="button" class="hs" style="left:${h[0]}%;top:${h[1]}%" data-h="${h[2]}" data-t="${h[3]}" aria-label="${h[2]}: ${h[3]}"></button>`).join('')}</div>`).join('')}
 function show(el,k){el.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('on',e.dataset.k==k))}
 const HK=['grid','main','drawer','memory','play','imgedit','gallery'];phone($('#hp'),HK);
-(function(){const hp=$('#hp'),d=document.createElement('div');d.className='hdots';d.innerHTML=HK.map((k,i)=>`<button type="button" aria-label="${SC[k][0]}"${i?'':' class="on"'}></button>`).join('');hp.appendChild(d);
-let i=0,t=null,hold=false;const go=n=>{i=(n+HK.length)%HK.length;show(hp,HK[i]);[...d.children].forEach((b,j)=>b.classList.toggle('on',j==i));hideTip()};
-const run=()=>{clearInterval(t);if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;t=setInterval(()=>{if(!hold&&!document.hidden)go(i+1)},5200)};
-d.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;go([...d.children].indexOf(b));run()});
-hp.addEventListener('pointerenter',()=>hold=true);hp.addEventListener('pointerleave',()=>{hold=false;run()});
-hp.addEventListener('focusin',()=>hold=true);hp.addEventListener('focusout',()=>{hold=false});
-let sx=null;hp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;hold=true},{passive:true});
-hp.addEventListener('touchend',e=>{if(sx!=null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));run()}}sx=null;setTimeout(()=>hold=false,4000)},{passive:true});
+(function(){const hp=$('#hp');
+let i=0,t=null,th=false,ht=null;const go=n=>{i=(n+HK.length)%HK.length;show(hp,HK[i]);hideTip()};
+const busy=()=>th||!!hp.querySelector('.hs:hover');
+const run=()=>{clearInterval(t);t=setInterval(()=>{if(!busy())go(i+1)},5200)};
+let sx=null;hp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+hp.addEventListener('touchend',e=>{if(sx!=null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));run()}}sx=null;th=true;clearTimeout(ht);ht=setTimeout(()=>th=false,3500)},{passive:true});
 run()})();
 phone($('#sp'),['main','drawer','memory','play','imgedit']);
 $('#gs').innerHTML=[['writer','Карточки'],['playlist','Плейлист'],['gallery','Галерея'],['cards','Дисконтные карты'],['calc','Калькулятор'],['app','Приложения'],['calendar','Календарь'],['birthday','Дни рождения'],['activity','Activity Manager'],['converter','Конвертер'],['bmi','Индекс массы тела'],['ruler','Линейка'],['scaner','Сканер кодов'],['sound','Шумомер'],['vibro','Виброметр']].map(a=>`<figure><div class="phone" data-g="${a[0]}"></div><figcaption>${a[1]}</figcaption></figure>`).join('');
@@ -373,7 +371,7 @@ addEventListener('scroll',()=>{if(!tick)tick=requestAnimationFrame(()=>{tick=0;o
 /* cursor glow */
 if(matchMedia('(pointer:fine)').matches&&!rm)addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
 /* pulses: hero/story — one dot at a time per screen; gallery — random dot on a random screenshot, never two at once on one screen */
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+{
 const vis=h=>{const r=h.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth};
 const fire=x=>{if(x.classList.contains('pu'))return;x.classList.add('pu');setTimeout(()=>x.classList.remove('pu'),2900)};
 let lastG=null;
@@ -381,9 +379,9 @@ let tk=0,tipDone=false;
 const autoTip=b=>{showTip(b);setTimeout(()=>{if(cur===b)hideTip()},2600)};
 setInterval(()=>{
 tk++;tipDone=false;
-$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;if(tk%3)return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;const b=hs[h._i];fire(b);const ph=h.closest('.phone');if(!tipDone&&!hov&&!(ph&&ph.matches(':hover'))){tipDone=true;autoTip(b)}});
+$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;if(tk%3)return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;const b=hs[h._i];fire(b);const ph=h.closest('.phone');if(!tipDone&&!(ph&&ph.querySelector('.hs:hover'))){tipDone=true;autoTip(b)}});
 let g=$$('#gs .hl').filter(h=>vis(h)&&!h.querySelector('.hs.pu'));if(g.length>1&&lastG)g=g.filter(h=>h!==lastG);
-if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length){const b=hs[Math.random()*hs.length|0];fire(b);if(tk%3==1&&!tipDone&&!hov&&!$('#gs').matches(':hover')){tipDone=true;autoTip(b)}}}
+if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length){const b=hs[Math.random()*hs.length|0];fire(b);if(tk%3==1&&!tipDone&&!$('#gs').matches(':hover')){tipDone=true;autoTip(b)}}}
 },1000)}
 /* ambient music: starts silent, rises very slowly */
 (function(){const au=$('#bgm'),sb=$('#snd'),TARGET=.1,RAMP=60000,TICK=400;let muted=false,prog=0,f=0,g=null,ok=false;
