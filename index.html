@@ -17,13 +17,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Filarix — мощный файловый менеджер для Android</title>
 <meta name="description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<link rel="canonical" href="https://brandmauer.github.io/fm/">
+<link rel="canonical" href="https://brandmauer.github.io/filarix/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Filarix">
-<meta property="og:url" content="https://brandmauer.github.io/fm/">
+<meta property="og:url" content="https://brandmauer.github.io/filarix/">
 <meta property="og:title" content="Filarix — мощный файловый менеджер для Android">
 <meta property="og:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta property="og:image" content="https://brandmauer.github.io/fm/img/og-icon.png">
+<meta property="og:image" content="https://brandmauer.github.io/filarix/img/og-icon.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Filarix — мощный файловый менеджер для Android">
 <meta name="twitter:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
-<meta name="twitter:image" content="https://brandmauer.github.io/fm/img/og-icon.png">
+<meta name="twitter:image" content="https://brandmauer.github.io/filarix/img/og-icon.png">
 <meta name="theme-color" content="#0b0805">
 <link rel="icon" href="img/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -251,7 +251,7 @@ footer a{color:var(--dim)}
 <h2 style="position:relative">Порядок в файлах начинается здесь</h2>
 <p class="soon" style="position:relative">Приложение можно скачать файлом прямо с сайта. Если вас смущают предупреждения Google Play защиты — перед установкой проверьте файл на <a href="https://www.virustotal.com/">Virustotal.com</a></p>
 <div class="hb" style="position:relative;justify-content:center">
-<a class="btn" id="apk" href="https://github.com/brandmauer/brandmauer.github.io/releases/download/filarix/filarix.apk" download>Скачать с сайта</a>
+<a class="btn" id="apk" href="https://github.com/brandmauer/filarix/releases/latest/download/com.brandmauer.filarix.apk" download>Скачать с сайта</a>
 <a class="btn o" href="#support">Поддержать разработчика</a></div>
 <p class="meta" style="position:relative">Android · интернет нужен только для сетевых накопителей и обновления данных</p></section>
 
@@ -272,7 +272,7 @@ footer a{color:var(--dim)}
 <a class="cc" href="https://github.com/brandmauer" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg><span>GitHub</span><b>github.com/brandmauer</b></a>
 <a class="cc" href="https://t.me/abplayerbot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg><span>Telegram-бот поддержки</span><b>t.me/abplayerbot</b></a></div></section>
 
-<footer>Filarix · файловый менеджер для Android · <a href="../">ABPlayer</a> · Скачиваний: <span id="dlcount">0</span></footer>
+<footer>Filarix · файловый менеджер для Android · <a href="https://brandmauer.github.io/">ABPlayer</a> · Скачиваний: <span id="dlcount">0</span></footer>
 
 <audio id="bgm" src="audio/ambient.mp3" loop preload="auto"></audio>
 <script>
@@ -390,11 +390,11 @@ ui();start()})();
 (()=>{
 const START=0;     /* число, с которого начинаем */
 const BASELINE=0;   /* сколько скачиваний GitHub уже насчитал на момент запуска счётчика */
-const API='https://api.github.com/repos/brandmauer/brandmauer.github.io/releases?per_page=100';
+const API='https://api.github.com/repos/brandmauer/filarix/releases?per_page=100';
 const out=document.getElementById('dlcount');
 if(!out)return;
 const show=n=>{out.textContent=(START+Math.max(0,n-BASELINE)).toLocaleString('ru-RU')};
-const total=rels=>rels.reduce((t,r)=>t+(r.assets||[]).filter(a=>a.name==='filarix.apk').reduce((x,a)=>x+a.download_count,0),0);
+const total=rels=>rels.reduce((t,r)=>t+(r.assets||[]).filter(a=>a.name==='com.brandmauer.filarix.apk').reduce((x,a)=>x+a.download_count,0),0);
 try{const c=JSON.parse(localStorage.getItem('dlc')||'null');
   if(c&&Date.now()-c.t<6e5){show(c.n);return}}catch(e){}
 fetch(API).then(r=>r.json()).then(d=>{
