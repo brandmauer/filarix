@@ -124,13 +124,13 @@ footer{padding:30px 5vw 40px;color:#8a7a63;font-size:13px;text-align:center;bord
 .sb svg{width:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.sb .x{display:none}.sb.mut .w{display:none}.sb.mut .x{display:block}.sb.mut{color:var(--dim)}
 .hb{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 
-.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}.scr img.on{opacity:1}
-.hl{position:absolute;inset:9px;z-index:10;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}.hl.on{opacity:1;visibility:visible}
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.2s ease-in-out}.scr img.on{opacity:1}
+.hl{position:absolute;inset:9px;z-index:10;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}.hl.on{opacity:1;visibility:visible}
 .hs{position:absolute;pointer-events:auto;width:30px;height:30px;margin:-15px 0 0 -15px;padding:0;border:0;border-radius:50%;background:transparent;cursor:help;outline:0}
 .hs:before{content:"";position:absolute;inset:-4px;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(244,220,163,.30) 0,rgba(244,220,163,.20) 50%,rgba(244,220,163,.08) 78%,rgba(244,220,163,0) 100%);opacity:0;transform:scale(.55);will-change:transform,opacity}
-.hs:hover:before,.hs:focus-visible:before,.hs.pu:before{animation:pl 2.8s cubic-bezier(.25,.6,.3,1) both}
-@keyframes pl{0%{opacity:0;transform:scale(.55)}25%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
-#tip{position:fixed;z-index:60;max-width:240px;padding:11px 14px;border-radius:14px;background:rgba(26,19,11,.94);backdrop-filter:blur(14px);border:1px solid var(--ln);box-shadow:0 20px 50px rgba(0,0,0,.6);font-size:13px;line-height:1.45;color:var(--dim);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s;left:0;top:0}
+.hs:hover:before,.hs:focus-visible:before,.hs.pu:before{animation:pl 4s ease-in-out both}
+@keyframes pl{0%{opacity:0;transform:scale(.8)}35%{opacity:.85;transform:scale(1.05)}70%{opacity:.4;transform:scale(1.4)}100%{opacity:0;transform:scale(1.75)}}
+#tip{position:fixed;z-index:60;max-width:240px;padding:11px 14px;border-radius:14px;background:rgba(26,19,11,.94);backdrop-filter:blur(14px);border:1px solid var(--ln);box-shadow:0 20px 50px rgba(0,0,0,.6);font-size:13px;line-height:1.45;color:var(--dim);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .6s,transform .6s;left:0;top:0}
 #tip.on{opacity:1;transform:none}#tip b{display:block;color:var(--gold2);font-size:14px;margin-bottom:2px}
 .gal{padding:5vh 0 2vh;text-align:center}.gal h2{font-size:clamp(38px,5vw,66px);margin-bottom:10px}.gal p.l{color:var(--dim);margin:0 auto 12px;max-width:36em;padding:0 5vw}
 .gs{display:flex;justify-content:safe center;gap:28px;overflow-x:auto;scroll-snap-type:x proximity;padding:20px 5vw 26px;scrollbar-width:thin}
@@ -180,8 +180,6 @@ footer a{color:var(--dim)}
 <div class="stage">
 <div class="orb" data-p="-.12" style="width:380px;height:380px;background:#a8642a;opacity:.42;left:2%;top:8%"></div>
 <div class="orb" data-p=".1" style="width:280px;height:280px;background:#d9a441;opacity:.24;right:0;bottom:6%"></div>
-<div class="chip" data-p="-.2" style="left:-4%;top:22%"><b>FTP</b> · <b>SFTP</b> · <b>SMB</b> · <b>WebDAV</b></div>
-<div class="chip" data-p=".16" style="right:-2%;top:58%">Свободно <b>37,35 ГБ</b></div>
 <div class="phone ph" id="hp" data-p="-.06"></div>
 </div></header>
 
@@ -278,29 +276,28 @@ footer a{color:var(--dim)}
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 /* screens + hotspots: [x%, y%, title, text] */
-const TB=[[9,8.9,'Меню','Накопители, сетевые диски и все инструменты.'],[54.5,8.9,'Создать','Новый файл или папка.'],[67,8.9,'Поиск','По именам, а через меню — внутри файлов.'],[79.5,8.9,'Вид и сортировка','Список, сетка или карточки; имя, тип, размер, дата; папки первыми.'],[91,8.9,'Ещё','Скрытые файлы, терминал, закладка, ярлык, новое окно.']];
 const SC={
-grid:['Папки сеткой',[...TB,[14,15,'Путь','Хлебные крошки: тап по любому уровню — быстрый переход.'],[17,22.6,'Папка','Тап — открыть, долгое нажатие — выбрать несколько.']]],
-main:['Файловый менеджер: список',[...TB,[14,15,'Путь','Хлебные крошки: быстрый переход на любой уровень.'],[56,23.5,'Права доступа','Права на файл видны прямо в списке.'],[90,23.5,'Дата изменения','Когда папка или файл менялись последний раз.']]],
-drawer:['Накопители и инструменты',[[9,9.4,'Root','Вся файловая система при наличии root-доступа.'],[9,17,'Накопители','Внутренняя память и карты со свободным местом.'],[9,26,'WebDAV','Облако или сервер как обычная папка.'],[9,31.5,'FTP, SFTP, SMB','Сетевые диски с авторизацией и кодировкой.'],[9,39.7,'Галереи','Изображения со всех папок в одном месте.'],[9,47,'Activity Manager','Запуск Activity установленных приложений.'],[9,53,'Дисконтные карты','Карты магазинов и штрихкоды.'],[9,58.6,'Анализатор памяти','Что занимает место на накопителе.'],[9,64,'Календарь','Год на одном экране.'],[9,70,'Плеер','Музыка и аудиокниги из любой папки.'],[9,75.5,'Приложения','Пакеты с фильтрами и запуском.'],[9,83,'Удалённый доступ','FTP-сервер на этом телефоне.'],[9,89,'Настройки','Вид, root, кодировки архивов, темы.']]],
-memory:['Анализатор памяти',[[27,15,'Путь','Переход между уровнями вложенности.'],[84,8.9,'Сортировка','Сначала самые тяжёлые или по имени.'],[27,25.8,'Плитка папки','Размер, доля от занятого и число элементов. Тап — вглубь.'],[30,31,'Доля занятого','Полоса показывает, какую часть накопителя занимает папка.'],[50,91,'Свободно','Сколько места осталось и сколько всего на накопителе.']]],
-play:['Плеер',[[40,8,'Название','Трек и исполнитель в заголовке.'],[50,43.7,'Обложка','Берётся из тегов файла.'],[50,77.3,'Шкала времени','Перемотка и время трека.'],[50,86.6,'Ручка плейлиста','Потяните вверх: список выдвинется над кнопками, а строка управления останется на экране.'],[30,91.2,'Повтор','Режимы повтора трека и плейлиста.'],[70,91.2,'Перемешивание','Случайный порядок треков.']]],
-imgedit:['Редактор изображений',[[37,8.6,'Отмена','Шаг назад по правкам.'],[10,81.3,'Перо','Рисунок от руки.'],[59,81.3,'Текст','Подпись поверх изображения.'],[91,81.3,'Обрезка','Кадрирование нужной области.'],[50,86.7,'Палитра цветов','Любой цвет и толщина линии.']]],
-playlist:['Плейлист',[[50,14.2,'Плейлист выдвинут','Ручка тянет список вверх, а кнопки управления остаются под ним.'],[26,18.5,'Группа','Треки сгруппированы по папкам.'],[31,23,'Трек','Название, исполнитель и длительность.'],[50,91,'Управление','Строка кнопок всегда на экране.']]],
-writer:['Карточки',[[26,25,'Папки-карточки','Крупные плитки: удобно, когда в папке мало, но важных разделов.']]],
-gallery:['Галерея',[[33,20,'Миниатюры','Изображения из всех папок плотной сеткой.']]],
-activity:['Activity Manager',[[28,15,'Фильтры','Пользовательские, системные и все приложения.'],[28,21.5,'Приложение','Тап — список его Activity и запуск.']]],
-app:['Приложения',[[26,15,'Фильтры','user, system, reserved, all и disabled.'],[28,21.5,'Плитка приложения','Название, пакет и размер.']]],
-calc:['Калькулятор',[[92,26,'Дисплей','Результат крупно, режим градусов — слева.'],[9,37.4,'Научные функции','sin, cos, tan, гиперболические и обратные.'],[91,87.7,'Равно','Вычисляет выражение.']]],
-calendar:['Календарь',[[33.5,14.8,'Год','Все двенадцать месяцев на одном экране.'],[42,77,'Сегодня','Текущий день подсвечен.']]],
-birthday:['Дни рождения',[[12,17,'Фото','Фото контакта и дата рождения.'],[80,15.5,'Сколько осталось','До ближайшей даты — в неделях и месяцах.']]],
-cards:['Дисконтные карты',[[23,17,'Карточка магазина','Цветная плитка: тап — показать код.']]],
-converter:['Конвертер единиц',[[30,16,'Категории','Длина, масса, площадь, объём, температура и другие.'],[20,55,'Данные','От бит до терабайт.']]],
-bmi:['Индекс массы тела',[[49,32,'Результат','Значение ИМТ крупно.'],[49,40.6,'Категория','Оценка по шкале ВОЗ и диапазон нормы.'],[49,54,'Рост и вес','Введите значения — результат обновится сразу.']]],
-ruler:['Линейка',[[10,41,'Шкала','Миллиметры и сантиметры на экране.'],[90,89.7,'Меню','Калибровка, подписи и режимы.']]],
-scaner:['Сканер кодов',[[50,47,'Код','QR и штрихкоды с камеры или из изображения.'],[19.5,83.9,'Действия','Копировать, поделиться или открыть.'],[50,90,'Сканировать снова','Следующий код.']]],
-sound:['Шумомер',[[49,22.8,'Уровень шума','Значение в дБ и словесная оценка.'],[49,42.8,'Максимум','Тап — сбросить.'],[49,54.8,'График','История измерений.']]],
-vibro:['Виброметр',[[50,22.8,'Вибрация','Интенсивность и оценка.'],[50,35.5,'Частота','Основная частота колебаний.'],[50,57,'Оси X Y Z','График акселерометра по трём осям.']]]};
+grid:['Папки сеткой',[[17,22.6,'Три вида папок','Список, сетка или карточки — вид задаётся отдельно для каждой папки.'],[79.5,8.9,'Сортировка','По имени, типу, размеру и дате; папки можно держать наверху.'],[67,8.9,'Поиск','Ищет по именам файлов, а через меню — и внутри самих файлов.'],[14,15,'Путь','Хлебные крошки: переход на любой уровень в один тап.']]],
+main:['Файловый менеджер: список',[[56,23.5,'Права доступа','Права на файлы и папки видны прямо в списке — удобно при работе с root и серверами.'],[91,8.9,'Терминал и закладки','В меню: открыть папку в терминале, добавить закладку, вынести ярлык на рабочий стол.'],[54.5,8.9,'Создание и архивы','Новый файл или папка; выбранное упаковывается в архив и распаковывается обратно.'],[9,8.9,'Все накопители','Боковое меню с памятью, картами, сетевыми дисками и инструментами.']]],
+drawer:['Накопители и инструменты',[[9,26,'FTP, SFTP, SMB, WebDAV','Сетевые диски подключаются как обычные папки: копируйте файлы с сервера и на него.'],[9,9.4,'Root-доступ','Вся файловая система, смена владельца, группы и прав на файлы.'],[9,83,'FTP-сервер на телефоне','Откройте доступ к файлам с компьютера по Wi-Fi, без кабеля и программ.'],[9,58.6,'Анализатор памяти','Показывает, какие папки занимают место на накопителе.'],[9,17,'Карты памяти','Внутренняя память и SD с остатком свободного места.']]],
+memory:['Анализатор памяти',[[27,25.8,'Что занимает место','Цветные плитки папок: размер, доля от занятого и число элементов.'],[30,31,'Заходите вглубь','Тап по плитке открывает папку внутри, где можно сразу удалить лишнее.'],[50,91,'Свободное место','Остаток и общий объём накопителя — всегда внизу экрана.'],[84,8.9,'Сортировка','Сначала самые тяжёлые папки или по имени.']]],
+play:['Плеер',[[50,86.6,'Плейлист над кнопками','Выдвигается за ручку, а строка управления остаётся на экране.'],[50,77.3,'Перемотка','Шкала времени с текущей позицией и длиной трека.'],[70,91.2,'Повтор и перемешивание','Режимы повтора и случайный порядок — одним касанием.'],[50,43.7,'Обложка из тегов','Название, исполнитель и обложка берутся из файла.']]],
+imgedit:['Редактор изображений',[[10,81.3,'Рисование','Перо, стрелка, овал и ластик — отметить главное на снимке.'],[59,81.3,'Подписи','Текст поверх изображения любым цветом из палитры.'],[91,81.3,'Обрезка','Кадрирование снимка без сторонних редакторов.'],[37,8.6,'Отмена','Шаг назад по правкам.']]],
+gallery:['Галерея',[[33,20,'Все фото в одном месте','Изображения из всех папок плотной сеткой — без поиска по каталогам.'],[50,45,'Просмотр и слайдшоу','Откройте снимок на весь экран и запустите слайдшоу.'],[67,8.9,'Поиск','Быстро находит нужный снимок по имени.']]],
+playlist:['Плейлист',[[26,18.5,'Группы по папкам','Треки сгруппированы по папкам — альбом или книга целиком.'],[31,23,'Дорожка','Название, исполнитель и длительность каждого трека.'],[50,91,'Управление на месте','Строка кнопок остаётся на экране, пока список открыт.']]],
+writer:['Карточки',[[26,25,'Режим карточек','Крупные цветные плитки: удобно, когда в папке мало разделов.']]],
+activity:['Activity Manager',[[28,15,'Фильтры','Пользовательские, системные и все приложения.'],[28,21.5,'Запуск Activity','Тап по приложению показывает его Activity и запускает любую.']]],
+app:['Приложения',[[26,15,'Фильтры списка','user, system, reserved, all и disabled.'],[28,21.5,'Плитка приложения','Название, пакет и размер установленного приложения.']]],
+calc:['Калькулятор',[[9,37.4,'Научные функции','sin, cos, tan, гиперболические и обратные функции.'],[92,26,'Дисплей','Результат крупно, режим градусов слева.'],[91,87.7,'Равно','Вычисляет выражение со скобками и памятью.']]],
+calendar:['Календарь',[[33.5,14.8,'Год целиком','Все двенадцать месяцев на одном экране.'],[42,77,'Сегодня','Текущий день подсвечен.']]],
+birthday:['Дни рождения',[[12,17,'Фото из контактов','Фото и дата рождения подтягиваются из книги контактов.'],[80,15.5,'Сколько осталось','До ближайшей даты — в неделях и месяцах.']]],
+cards:['Дисконтные карты',[[23,17,'Карточка магазина','Цветная плитка: тап — показать код на кассе.']]],
+converter:['Конвертер единиц',[[30,16,'12 категорий','Длина, масса, площадь, объём, температура и другие.'],[20,55,'Данные','От бит до терабайт.']]],
+bmi:['Индекс массы тела',[[49,40.6,'Категория по ВОЗ','Оценка и диапазон нормального веса для вашего роста.'],[49,54,'Рост и вес','Введите значения — результат обновится сразу.']]],
+ruler:['Линейка',[[10,41,'Шкала','Миллиметры и сантиметры на экране.'],[90,89.7,'Калибровка','Настройка точности и режимов.']]],
+scaner:['Сканер кодов',[[50,47,'QR и штрихкоды','Распознаёт код с камеры или из изображения.'],[19.5,83.9,'Действия','Копировать, поделиться или открыть найденное.']]],
+sound:['Шумомер',[[49,22.8,'Уровень шума','Значение в дБ и словесная оценка.'],[49,54.8,'График','История измерений и максимум.']]],
+vibro:['Виброметр',[[50,22.8,'Вибрация','Интенсивность по трём осям акселерометра.'],[50,57,'Оси X Y Z','График колебаний, частота и пик.']]]};
 const PD={
 writer:'Режим карточек: крупные плитки папок для быстрого выбора.',
 playlist:'Плейлист плеера: треки сгруппированы по папкам, строка кнопок остаётся на экране.',
@@ -321,12 +318,19 @@ function phone(el,keys){el.innerHTML=`<div class="scr">${keys.map((k,i)=>`<img s
 function show(el,k){el.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('on',e.dataset.k==k))}
 const HK=['grid','main','drawer','memory','play','imgedit','gallery'];phone($('#hp'),HK);
 (function(){const hp=$('#hp');
-let i=0,t=null,th=false,ht=null;const go=n=>{i=(n+HK.length)%HK.length;show(hp,HK[i]);hideTip()};
+let i=0,T=[],th=false,ht=null;
+const at=(ms,f)=>T.push(setTimeout(f,ms)),clr=()=>{T.forEach(clearTimeout);T=[]};
+const pulse=b=>{b.classList.add('pu');setTimeout(()=>b.classList.remove('pu'),4000)};
 const busy=()=>th||!!hp.querySelector('.hs:hover');
-const run=()=>{clearInterval(t);t=setInterval(()=>{if(!busy())go(i+1)},5200)};
+const FADE=2400,STEP=3800,SHOW=3000;
+function play(){clr();hideTip();const hs=[...hp.querySelectorAll('.hl.on .hs')].slice(0,3);
+hs.forEach((b,n)=>at(FADE+n*STEP,()=>{if(busy())return;pulse(b);showTip(b);at(SHOW,()=>{if(cur===b)hideTip()})}));
+at(FADE+hs.length*STEP,next)}
+function next(){if(busy()||document.hidden)return at(1000,next);go(i+1)}
+function go(n){i=(n+HK.length)%HK.length;show(hp,HK[i]);play()}
 let sx=null;hp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-hp.addEventListener('touchend',e=>{if(sx!=null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));run()}}sx=null;th=true;clearTimeout(ht);ht=setTimeout(()=>th=false,3500)},{passive:true});
-run()})();
+hp.addEventListener('touchend',e=>{if(sx!=null){const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(i+(dx<0?1:-1))}sx=null;th=true;clearTimeout(ht);ht=setTimeout(()=>th=false,3500)},{passive:true});
+setTimeout(play,0)})();
 phone($('#sp'),['main','drawer','memory','play','imgedit']);
 $('#gs').innerHTML=[['writer','Карточки'],['playlist','Плейлист'],['gallery','Галерея'],['cards','Дисконтные карты'],['calc','Калькулятор'],['app','Приложения'],['calendar','Календарь'],['birthday','Дни рождения'],['activity','Activity Manager'],['converter','Конвертер'],['bmi','Индекс массы тела'],['ruler','Линейка'],['scaner','Сканер кодов'],['sound','Шумомер'],['vibro','Виброметр']].map(a=>`<figure><div class="phone" data-g="${a[0]}"></div><figcaption>${a[1]}</figcaption></figure>`).join('');
 $$('[data-g]').forEach(e=>phone(e,[e.dataset.g]));
@@ -373,13 +377,13 @@ if(matchMedia('(pointer:fine)').matches&&!rm)addEventListener('pointermove',e=>{
 /* pulses: hero/story — one dot at a time per screen; gallery — random dot on a random screenshot, never two at once on one screen */
 {
 const vis=h=>{const r=h.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth};
-const fire=x=>{if(x.classList.contains('pu'))return;x.classList.add('pu');setTimeout(()=>x.classList.remove('pu'),2900)};
+const fire=x=>{if(x.classList.contains('pu'))return;x.classList.add('pu');setTimeout(()=>x.classList.remove('pu'),4000)};
 let lastG=null;
 let tk=0,tipDone=false;
 const autoTip=b=>{showTip(b);setTimeout(()=>{if(cur===b)hideTip()},2600)};
 setInterval(()=>{
 tk++;tipDone=false;
-$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;if(tk%3)return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;const b=hs[h._i];fire(b);const ph=h.closest('.phone');if(!tipDone&&!(ph&&ph.querySelector('.hs:hover'))){tipDone=true;autoTip(b)}});
+$$('.hl.on').forEach(h=>{if(h.closest('#gs')||h.closest('#hp')||!vis(h))return;if(tk%4)return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;const b=hs[h._i];fire(b);const ph=h.closest('.phone');if(!tipDone&&!(ph&&ph.querySelector('.hs:hover'))){tipDone=true;autoTip(b)}});
 let g=$$('#gs .hl').filter(h=>vis(h)&&!h.querySelector('.hs.pu'));if(g.length>1&&lastG)g=g.filter(h=>h!==lastG);
 if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length){const b=hs[Math.random()*hs.length|0];fire(b);if(tk%3==1&&!tipDone&&!$('#gs').matches(':hover')){tipDone=true;autoTip(b)}}}
 },1000)}
