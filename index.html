@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113219278', 'ym');
+
+    ym(113219278, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/113219278" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Filarix — мощный файловый менеджер для Android</title>
+<meta name="description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
+<link rel="canonical" href="https://brandmauer.github.io/fm/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Filarix">
+<meta property="og:url" content="https://brandmauer.github.io/fm/">
+<meta property="og:title" content="Filarix — мощный файловый менеджер для Android">
+<meta property="og:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
+<meta property="og:image" content="https://brandmauer.github.io/fm/img/og-icon.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Иконка Filarix">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Filarix — мощный файловый менеджер для Android">
+<meta name="twitter:description" content="Filarix — файловый менеджер для Android: FTP, SFTP, SMB, WebDAV, root, анализатор памяти, плеер, редактор изображений и больше 20 встроенных инструментов.">
+<meta name="twitter:image" content="https://brandmauer.github.io/fm/img/og-icon.png">
+<meta name="theme-color" content="#0b0805">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="site.css" rel="stylesheet">
+<style>
+:root{--bg:#0b0805;--bg2:#150f08;--ink:#f5ecdd;--dim:#b5a58c;--gold:#d9a441;--gold2:#f4dca3;--ind:#a8642a;--ind2:#c98a4b;--s1:#1a130b;--s2:#231a10;--s3:#2c2115;--ln:rgba(245,236,221,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0805}}
+:root[data-theme=dark]{--bg:#0b0805}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.02;letter-spacing:-.01em}
+a{color:inherit}
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0;transform:scaleX(0);background:linear-gradient(90deg,var(--ind),var(--gold));z-index:50}
+#glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(217,164,65,.13),transparent);pointer-events:none;z-index:1;left:-999px;top:0}
+nav{position:fixed;inset:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 5vw 20px;z-index:40;background:linear-gradient(var(--bg),transparent)}
+nav b{display:flex;align-items:center;gap:10px;white-space:nowrap;font:600 26px 'Cormorant Garamond',serif;letter-spacing:.02em}
+.btn{display:inline-block;padding:14px 30px;border-radius:99px;background:linear-gradient(120deg,var(--gold2),var(--gold));color:#1a1408;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 10px 40px rgba(217,164,65,.25);transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 50px rgba(217,164,65,.4)}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ln);box-shadow:none;padding:10px 22px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+section{position:relative}
+.wrap{max-width:1180px;margin:auto;padding:0 5vw}
+/* hero */
+.hero{min-height:auto;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:4vw;padding:110px 5vw 30px;max-width:1300px;margin:auto;overflow:visible}
+.hero h1{font-size:clamp(50px,7.4vw,112px)}
+.hero h1 i{display:block;color:var(--gold2)}
+.hero p.l{max-width:30em;margin:22px 0 28px;color:var(--dim);font-size:19px}
+.hero .in{opacity:0;transform:translateY(30px);animation:up 1.1s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .in:nth-child(2){animation-delay:.2s}.hero .in:nth-child(3){animation-delay:.4s}.hero .ph{animation:up 1.4s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.stage{position:relative;display:grid;place-items:center;height:700px}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.chip{position:absolute;padding:11px 18px;border-radius:16px;background:rgba(26,19,11,.72);backdrop-filter:blur(14px);border:1px solid var(--ln);font-weight:600;font-size:14px;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:3;white-space:nowrap}
+.chip b{color:var(--gold2);font-weight:800}
+/* phone */
+.phone{position:relative;width:300px;border-radius:44px;padding:9px;background:linear-gradient(150deg,#4d4130,#120d07 40%,#3a2f21);box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 1px #6a5a42 inset,0 0 90px rgba(217,164,65,.2);flex:none}
+.scr{position:relative;width:100%;aspect-ratio:1080/2340;border-radius:36px;overflow:hidden;background:#0a0805;color:#f5ecdd;font-size:11px;line-height:1.35}
+.scr:before{content:"";position:absolute;top:8px;left:50%;width:70px;height:18px;margin-left:-35px;border-radius:12px;background:#000;z-index:9}
+/* manifesto */
+.man{padding:9vh 5vw;max-width:1100px;margin:auto}
+.man p{font:500 clamp(34px,5.4vw,76px)/1.08 'Cormorant Garamond',serif}
+.man span{opacity:.16;transition:opacity .4s,color .4s}.man span.l{opacity:1}.man span.g.l{color:var(--gold2)}
+/* story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:6vw;max-width:1180px;margin:auto;padding:0 5vw}
+.pin{position:sticky;top:0;height:100vh;display:grid;place-items:center}
+.step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .6s}
+.step.on{opacity:1}
+.step h2{font-size:clamp(40px,5vw,70px);margin-bottom:22px}
+.step p{color:var(--dim);max-width:30em;margin-bottom:14px}
+.step ul{list-style:none;padding:0;margin-top:10px;max-width:32em}
+.step li{padding:13px 0;border-top:1px solid var(--ln);font-size:15.5px}.step li b{color:var(--gold2);font-weight:600}
+.pin .phone{transition:transform .3s}
+/* AB */
+.abx{padding:8vh 5vw;background:linear-gradient(var(--bg),var(--bg2),var(--bg));text-align:center}
+.abx h2{font-size:clamp(40px,6vw,88px);max-width:14em;margin:0 auto 20px}
+.abx p.l{color:var(--dim);max-width:38em;margin:0 auto 34px}
+.wf{display:flex;align-items:center;gap:3px;height:190px;max-width:1080px;margin:auto;position:relative}
+.wf i{flex:1;border-radius:3px;background:rgba(245,236,221,.16);transition:background .3s}.wf i.in{background:linear-gradient(var(--gold2),var(--gold))}
+.wf .ph2{position:absolute;top:-8px;bottom:-8px;width:2px;background:#fff;box-shadow:0 0 18px 3px rgba(244,220,163,.8)}
+.wf .mk{position:absolute;top:-38px;font:600 24px 'Cormorant Garamond',serif;color:var(--gold2)}
+.wf .mk:after{content:"";position:absolute;left:50%;top:30px;height:230px;border-left:1px dashed rgba(217,164,65,.5)}
+.cnt{margin-top:40px;font:500 22px 'Cormorant Garamond',serif;color:var(--dim)}.cnt b{color:var(--gold2);font-size:34px;font-weight:600}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:auto;padding:5vh 5vw;gap:24px}
+.facts div{border-left:1px solid var(--ln);padding-left:22px}
+.facts b{display:block;font:500 clamp(52px,6vw,92px)/1 'Cormorant Garamond',serif;color:var(--gold2)}
+.facts span{color:var(--dim);font-size:14.5px}
+.more{max-width:1180px;margin:auto;padding:3vh 5vw 6vh;display:grid;grid-template-columns:1fr 1fr;column-gap:6vw}
+.more h2{grid-column:1/-1;font-size:clamp(40px,5.4vw,78px);margin-bottom:3vh}
+.more div{padding:18px 0;border-top:1px solid var(--ln)}.more h3{font-size:30px;margin-bottom:8px}.more p{color:var(--dim);font-size:15.5px}
+.cta{text-align:center;padding:8vh 5vw 5vh;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(46px,8vw,120px);max-width:11em;margin:0 auto 24px}.cta p{color:var(--dim);margin-bottom:40px}
+footer{padding:30px 5vw 40px;color:#8a7a63;font-size:13px;text-align:center;border-top:1px solid var(--ln)}
+@media(max-width:860px){
+.hero{grid-template-columns:1fr;padding-top:110px;text-align:center}.hero p.l{margin-inline:auto}.stage{height:560px}.hero .phone{scale:.86}.hero{padding-top:92px}.chip{display:none}
+.story{grid-template-columns:1fr;gap:0}.pin{height:46vh;top:0;z-index:5;background:linear-gradient(var(--bg) 85%,transparent);place-items:start center;padding-top:64px}.pin .phone{transform:scale(.48);transform-origin:top center}
+.step{min-height:50vh;justify-content:flex-start;padding-top:3vh}.facts{gap:16px}.abx{padding:6vh 5vw}.man{padding:6vh 5vw}.cta{padding:6vh 5vw 4vh}
+.facts{grid-template-columns:1fr 1fr}.more{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero .in,.hero .ph{opacity:1;transform:none}}
+/* --- v2 --- */
+.nr{display:flex;align-items:center;gap:10px}
+.nr .btn.o{display:inline-flex;align-items:center;white-space:nowrap}
+.sb{width:42px;height:42px;border-radius:50%;border:1px solid var(--ln);background:rgba(26,19,11,.5);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;transition:border-color .3s,background .3s}
+.sb:hover{border-color:var(--gold);background:rgba(217,164,65,.12)}
+.sb svg{width:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.sb .x{display:none}.sb.mut .w{display:none}.sb.mut .x{display:block}.sb.mut{color:var(--dim)}
+.hb{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s}.scr img.on{opacity:1}
+.hl{position:absolute;inset:9px;z-index:10;pointer-events:none;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}.hl.on{opacity:1;visibility:visible}
+.hs{position:absolute;pointer-events:auto;width:30px;height:30px;margin:-15px 0 0 -15px;padding:0;border:0;border-radius:50%;background:transparent;cursor:help;outline:0}
+.hs:before{content:"";position:absolute;inset:-4px;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(244,220,163,.30) 0,rgba(244,220,163,.20) 50%,rgba(244,220,163,.08) 78%,rgba(244,220,163,0) 100%);opacity:0;transform:scale(.55);will-change:transform,opacity}
+.hs:hover:before,.hs:focus-visible:before,.hs.pu:before{animation:pl 2.8s cubic-bezier(.25,.6,.3,1) both}
+@keyframes pl{0%{opacity:0;transform:scale(.55)}25%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
+#tip{position:fixed;z-index:60;max-width:240px;padding:11px 14px;border-radius:14px;background:rgba(26,19,11,.94);backdrop-filter:blur(14px);border:1px solid var(--ln);box-shadow:0 20px 50px rgba(0,0,0,.6);font-size:13px;line-height:1.45;color:var(--dim);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s;left:0;top:0}
+#tip.on{opacity:1;transform:none}#tip b{display:block;color:var(--gold2);font-size:14px;margin-bottom:2px}
+.gal{padding:5vh 0 2vh;text-align:center}.gal h2{font-size:clamp(38px,5vw,66px);margin-bottom:10px}.gal p.l{color:var(--dim);margin:0 auto 12px;max-width:36em;padding:0 5vw}
+.gs{display:flex;justify-content:safe center;gap:28px;overflow-x:auto;scroll-snap-type:x proximity;padding:20px 5vw 26px;scrollbar-width:thin}
+.gs figure{flex:none;scroll-snap-align:center;width:240px}.gs .phone{width:240px;border-radius:38px;padding:8px}.gs .scr{border-radius:31px}.gs .hl{inset:8px}.gs figcaption{margin-top:14px;color:var(--dim);font-size:14px}
+.cta .soon{max-width:36em;margin:0 auto 30px}.cta .soon b{color:var(--gold2)}.cta .meta{margin:26px 0 0;font-size:14px}
+.btn svg{width:18px;height:18px;vertical-align:-3px;margin-right:9px}
+.btn.gp{opacity:.6;cursor:default}.btn.gp em{font:800 11px Manrope;font-style:normal;margin-left:10px;padding:3px 8px;border-radius:99px;background:rgba(217,164,65,.22);color:var(--gold2)}
+.sup,.ct{max-width:1180px;margin:auto;padding:6vh 5vw 3vh;text-align:center}
+.sup h2,.ct h2{font-size:clamp(40px,5.4vw,78px);margin-bottom:14px}.sup p.l,.ct p.l{color:var(--dim);max-width:38em;margin:0 auto 34px}
+.ways,.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
+.way,.cc{border:1px solid var(--ln);border-radius:22px;background:var(--s1);padding:26px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.way h3{font-size:30px}.way p{color:var(--dim);font-size:15.5px;flex:1}
+.qrb{background:#fff;padding:14px;border-radius:18px}.qrb img{display:block;width:222px;max-width:100%;height:auto;image-rendering:pixelated}
+.cc{text-decoration:none;gap:8px;transition:border-color .3s,transform .3s}.cc:hover{border-color:var(--gold);transform:translateY(-3px)}
+.cc svg{width:28px;fill:none;stroke:var(--gold2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.cc span{color:var(--dim);font-size:14px}.cc b{font-size:17px;word-break:break-all}
+footer a{color:var(--dim)}
+#dlcount{font-weight:400}
+.x2{margin-left:.3em}html{scroll-padding-top:76px}
+@media(max-width:860px){.ways,.cg{grid-template-columns:1fr}.hb{justify-content:center}.pin .hs{width:40px;height:40px;margin:-20px 0 0 -20px}.gs{gap:20px}.sup,.ct{padding:4vh 5vw 2vh}}
+@media(max-width:860px){.hero{overflow-x:clip}.cta{overflow-x:clip}}
+@media(max-width:700px){.x2{display:none}}
+@media(max-width:480px){nav{padding-left:4vw;padding-right:4vw}nav b{font-size:21px}.nr{gap:7px}.nr .btn.o{height:38px;padding:0 13px;font-size:13px}.sb{width:38px;height:38px}}
+@media(max-width:370px){nav b{display:none}}
+@media(prefers-reduced-motion:reduce){.hs:before{animation:none!important}}
+
+
+/* equal buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap}
+.hb .btn,.hb .btn.o{box-sizing:border-box;height:54px;width:330px;padding:0 16px;font-size:15px}
+.nr .btn,.nr .btn.o{box-sizing:border-box;height:42px;width:auto;padding:0 22px;font-size:14px}
+@media(max-width:480px){.hb{flex-direction:column;width:100%}.hb .btn,.hb .btn.o{width:100%;max-width:330px}.nr .btn,.nr .btn.o{height:38px;width:auto;min-width:0;padding:0 14px;font-size:13px}}
+@media(min-width:861px){.hero .hb .btn,.hero .hb .btn.o{width:262px}}
+.way .btn,.way .btn.o{box-sizing:border-box;height:54px;padding:0 24px;font-size:15px}
+</style>
+<style>nav b img{border-radius:7px}.step li,.step p{max-width:34em}.facts span{max-width:16em;display:block}.gs figure{width:240px}</style></head><body>
+<div id="bar"></div><div id="glow"></div><div id="tip" role="tooltip"></div>
+<nav><b><img src="img/favicon-32.png" width="28" height="28" alt="">Filarix</b><div class="nr">
+<button id="snd" class="sb" type="button" aria-label="Выключить музыку" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="w" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button>
+<a class="btn o" href="#support">Поддержать<span class="x2"> разработчика</span></a><a class="btn" href="#dl">Скачать</a></div></nav>
+
+<header class="hero">
+<div>
+<h1 class="in">Все ваши файлы<i>в одном окне.</i></h1>
+<p class="l in">Filarix — файловый менеджер для Android с сетевыми накопителями, root-доступом, анализатором памяти и больше чем двадцатью встроенными инструментами: от плеера и редактора до линейки и шумомера.</p>
+<div class="in hb"><a class="btn" href="#dl">Скачать для Android</a><a class="btn o" href="#support"> Поддержать разработчика</a></div>
+</div>
+<div class="stage">
+<div class="orb" data-p="-.12" style="width:380px;height:380px;background:#a8642a;opacity:.42;left:2%;top:8%"></div>
+<div class="orb" data-p=".1" style="width:280px;height:280px;background:#d9a441;opacity:.24;right:0;bottom:6%"></div>
+<div class="chip" data-p="-.2" style="left:-4%;top:22%"><b>FTP</b> · <b>SFTP</b> · <b>SMB</b> · <b>WebDAV</b></div>
+<div class="chip" data-p=".16" style="right:-2%;top:58%">Свободно <b>37,35 ГБ</b></div>
+<div class="phone ph" id="hp" data-p="-.06"></div>
+</div></header>
+
+<div class="man" id="man"><p>Файловый менеджер — это не просто список папок. Это <b style="font-weight:inherit">всё, что вы делаете с файлами</b> каждый день: найти, открыть, передать, понять, куда делось место.</p></div>
+
+<div class="story" id="story">
+<div class="pin"><div class="phone" id="sp"></div></div>
+<div>
+<div class="step on" data-s="a"><h2>Папки так, как удобно вам</h2>
+<p>Список, сетка или цветные карточки — вид можно задать отдельно для каждой папки. Права доступа и даты видны прямо в списке, а путь превращён в «хлебные крошки» для быстрого перехода.</p>
+<ul><li><b>Сортировка</b> по имени, типу, размеру и дате изменения, папки — первыми, по возрастанию или убыванию.</li>
+<li><b>Поиск</b> по именам и <b>внутри файлов</b> — через меню.</li>
+<li><b>Закладки и ярлыки</b> на рабочий стол для любой папки, показ скрытых файлов, новое окно.</li>
+<li><b>Копировать путь</b> и <b>открыть в терминале</b> — одним пунктом меню.</li></ul></div>
+<div class="step" data-s="b"><h2>Телефон, сервер и облако — в одном меню</h2>
+<p>Боковое меню собирает все накопители: внутреннюю память, карты, Root и сетевые диски. Новое подключение добавляется за минуту.</p>
+<ul><li><b>FTP, SFTP, SMB и WebDAV</b> — с авторизацией, кодировкой и поиском SMB-серверов в локальной сети.</li>
+<li><b>Root-доступ</b> к системным разделам: смена владельца, группы, прав и контекста SELinux.</li>
+<li><b>Удалённый доступ</b> — запустите FTP-сервер на телефоне, в том числе плиткой в шторке.</li>
+<li><b>Архивы</b>: сжатие, извлечение, пароли и выбор кодировки имён файлов.</li></ul></div>
+<div class="step" data-s="c"><h2>Куда делось место — видно сразу</h2>
+<p>Анализатор памяти показывает цветные плитки папок: размер, долю от занятого и число элементов. Тап — и вы уже внутри самой тяжёлой папки.</p>
+<ul><li><b>Свободно / занято</b> по накопителю — полоса внизу экрана.</li>
+<li><b>Удаление прямо из анализатора</b> с подтверждением, без возврата в список.</li>
+<li><b>«Открыть в файлах»</b> — переход к папке одним действием.</li>
+<li>Рядом — <b>Activity Manager</b> и список приложений с фильтрами «система», «пользователь», «отключённые».</li></ul></div>
+<div class="step" data-s="d"><h2>Плеер, который не прячет кнопки</h2>
+<p>Слушайте музыку и аудиокниги прямо из менеджера. Плейлист выдвигается за ручку над строкой управления, а кнопки остаются на экране.</p>
+<ul><li><b>Шкала времени, повтор, перемешивание</b> и переход между треками — всегда под пальцем.</li>
+<li><b>Группировка треков по папкам</b>, обложки из тегов, длительность каждой дорожки.</li>
+<li>Открывается из бокового меню и из любого файла «Открыть в…».</li></ul></div>
+<div class="step" data-s="e"><h2>Править на месте, не выходя из менеджера</h2>
+<p>Редактор изображений, текстовый редактор, просмотр PDF, галерея и слайдшоу — всё уже внутри.</p>
+<ul><li><b>Редактор изображений:</b> перо, стрелка, овал, текст, ластик, обрезка и палитра цветов.</li>
+<li><b>Текстовый редактор</b> с подсветкой синтаксиса и выбором кодировки.</li>
+<li><b>Галерея</b> по всем папкам с изображениями и слайдшоу.</li></ul></div>
+</div></div>
+
+<section class="gal"><h2>Скриншоты интерфейса</h2><p class="l">Наведите курсор на экран — расскажем, что это за страница, а на точку — что за ней скрывается. На телефоне просто коснитесь. Скриншоты сделаны в английской версии интерфейса.</p><div class="gs" id="gs"></div></section>
+
+<section class="abx"><h2>Один взгляд — и понятно, что занимает память</h2>
+<p class="l">Так работает анализатор памяти: приложение считает размеры папок и показывает самые тяжёлые, пока вы смотрите на экран.</p>
+<div class="wf" id="wf"><span class="ph2" id="ph2"></span></div>
+<div class="cnt">Просканировано: <b id="n">0,00</b> ГБ из 4,21</div></section>
+
+<section class="facts">
+<div><b data-n="22">0</b><span>встроенных инструмента — от плеера до виброметра</span></div>
+<div><b data-n="4">0</b><span>сетевых протокола: FTP, SFTP, SMB и WebDAV</span></div>
+<div><b data-n="12" data-s="+">0</b><span>категорий величин в конвертере единиц</span></div>
+<div><b data-n="3">0</b><span>вида папок: список, сетка и карточки</span></div></section>
+
+<section class="more"><h2>Инструменты, которые всегда с собой</h2>
+<div><h3>Activity Manager</h3><p>Список Activity установленных приложений с метками exported и private. Запуск в один тап и копирование имени класса.</p></div>
+<div><h3>Приложения</h3><p>Все пакеты в цветных плитках: фильтры «пользователь», «система», «зарезервированные», «все» и «отключённые».</p></div>
+<div><h3>Календарь</h3><p>Весь год на одном экране, сегодняшний день подсвечен. Настройки календаря — отдельным разделом.</p></div>
+<div><h3>Дни рождения</h3><p>Фото и возраст из книги контактов, «через 6 недель» вместо дат, напоминания, виджет и журнал.</p></div>
+<div><h3>Дисконтные карты</h3><p>Карты магазинов в цветных плитках: покажите код на кассе, не доставая пластик.</p></div>
+<div><h3>Калькулятор</h3><p>Научный режим с тригонометрией, гиперболическими функциями, степенями и памятью (M+, M−, MR).</p></div>
+<div><h3>Конвертер величин</h3><p>Длина, масса, площадь, объём, температура, скорость, время, данные, давление, энергия, мощность, углы.</p></div>
+<div><h3>Счётчики и случайные числа</h3><p>Именованные счётчики с плюсом, минусом и сбросом. Генератор чисел по диапазону — с повторами или без.</p></div>
+<div><h3>Индекс массы тела</h3><p>Рост, вес и пол — получите ИМТ, категорию по шкале ВОЗ и диапазон нормального веса для вашего роста.</p></div>
+<div><h3>Линейка, транспортир, отвес и уровень</h3><p>Миллиметровая шкала с калибровкой, транспортир поверх камеры, пузырьковый уровень и отвес с калибровкой нуля.</p></div>
+<div><h3>Шумомер и виброметр</h3><p>Уровень шума в дБ с графиком и максимумом, вибрация по трём осям акселерометра с частотой и пиком.</p></div>
+<div><h3>Сканер кодов</h3><p>QR и штрих-коды с камеры или из изображения, фонарик, быстрые действия: копировать, поделиться, открыть.</p></div></section>
+
+<section class="cta" id="dl"><div class="orb" data-p="-.1" style="width:520px;height:520px;background:#a8642a;opacity:.3;left:50%;top:10%;margin-left:-260px"></div>
+<h2 style="position:relative">Порядок в файлах начинается здесь</h2>
+<p class="soon" style="position:relative">Приложение можно скачать файлом прямо с сайта. Если вас смущают предупреждения Google Play защиты — перед установкой проверьте файл на <a href="https://www.virustotal.com/">Virustotal.com</a></p>
+<div class="hb" style="position:relative;justify-content:center">
+<a class="btn" id="apk" href="https://github.com/brandmauer/brandmauer.github.io/releases/download/filarix/filarix.apk" download>Скачать с сайта</a>
+<a class="btn o" href="#support">Поддержать разработчика</a></div>
+<p class="meta" style="position:relative">Android · интернет нужен только для сетевых накопителей и обновления данных</p></section>
+
+<section class="sup" id="support"><h2>Поддержать разработчика</h2>
+<p class="l">Filarix делает человек, который любит удобные инструменты. Если приложение вам понравится, поддержать разработчика можно переводом — любым из способов ниже. Как минимум — расскажите о нём тем, кому тоже нужен хороший файловый менеджер.</p>
+<div class="ways">
+<div class="way"><h3>Т-банк QR</h3><p>Откройте сканер в приложении своего банка и наведите камеру на код. Или по <a href="https://www.tbank-online.com/rm/r_lpTCegzrCf.vRDcAgTMMk/mOAgI9890">ссылке.</a></p>
+<div class="qrb"><img src="img/qr.png" width="111" height="111" alt="QR-код для перевода"></div></div>
+<div class="way"><h3>Сбербанк СБП</h3><p>Перевод по СБП. Откройте сканер в приложении своего банка и наведите камеру на код.</p>
+<div class="qrb"><img src="img/qr_sber.png" width="111" height="111" alt="QR-код для перевода"></div></div>
+<div class="way"><h3>Другой способ</h3><p>По номеру карты 2200701053037450 из любого банка. Удобнее иначе? Напишите в поддержку.</p>
+<a class="btn o" href="https://t.me/abplayerbot" target="_blank" rel="noopener">Написать в Telegram</a></div></div></section>
+
+<section class="ct" id="contacts"><h2>Контакты</h2>
+<p class="l">Вопросы, баги, идеи — пишите разработчику.</p>
+<div class="cg">
+<a class="cc" href="mailto:brandmauer@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span>Почта</span><b>brandmauer@gmail.com</b></a>
+<a class="cc" href="https://github.com/brandmauer" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg><span>GitHub</span><b>github.com/brandmauer</b></a>
+<a class="cc" href="https://t.me/abplayerbot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg><span>Telegram-бот поддержки</span><b>t.me/abplayerbot</b></a></div></section>
+
+<footer>Filarix · файловый менеджер для Android · <a href="../">ABPlayer</a> · Скачиваний: <span id="dlcount">0</span></footer>
+
+<audio id="bgm" src="audio/ambient.mp3" loop preload="auto"></audio>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+/* screens + hotspots: [x%, y%, title, text] */
+const TB=[[9,8.9,'Меню','Накопители, сетевые диски и все инструменты.'],[54.5,8.9,'Создать','Новый файл или папка.'],[67,8.9,'Поиск','По именам, а через меню — внутри файлов.'],[79.5,8.9,'Вид и сортировка','Список, сетка или карточки; имя, тип, размер, дата; папки первыми.'],[91,8.9,'Ещё','Скрытые файлы, терминал, закладка, ярлык, новое окно.']];
+const SC={
+grid:['Папки сеткой',[...TB,[14,15,'Путь','Хлебные крошки: тап по любому уровню — быстрый переход.'],[17,22.6,'Папка','Тап — открыть, долгое нажатие — выбрать несколько.']]],
+main:['Файловый менеджер: список',[...TB,[14,15,'Путь','Хлебные крошки: быстрый переход на любой уровень.'],[56,23.5,'Права доступа','Права на файл видны прямо в списке.'],[90,23.5,'Дата изменения','Когда папка или файл менялись последний раз.']]],
+drawer:['Накопители и инструменты',[[9,9.4,'Root','Вся файловая система при наличии root-доступа.'],[9,17,'Накопители','Внутренняя память и карты со свободным местом.'],[9,26,'WebDAV','Облако или сервер как обычная папка.'],[9,31.5,'FTP, SFTP, SMB','Сетевые диски с авторизацией и кодировкой.'],[9,39.7,'Галереи','Изображения со всех папок в одном месте.'],[9,47,'Activity Manager','Запуск Activity установленных приложений.'],[9,53,'Дисконтные карты','Карты магазинов и штрихкоды.'],[9,58.6,'Анализатор памяти','Что занимает место на накопителе.'],[9,64,'Календарь','Год на одном экране.'],[9,70,'Плеер','Музыка и аудиокниги из любой папки.'],[9,75.5,'Приложения','Пакеты с фильтрами и запуском.'],[9,83,'Удалённый доступ','FTP-сервер на этом телефоне.'],[9,89,'Настройки','Вид, root, кодировки архивов, темы.']]],
+memory:['Анализатор памяти',[[27,15,'Путь','Переход между уровнями вложенности.'],[84,8.9,'Сортировка','Сначала самые тяжёлые или по имени.'],[27,25.8,'Плитка папки','Размер, доля от занятого и число элементов. Тап — вглубь.'],[30,31,'Доля занятого','Полоса показывает, какую часть накопителя занимает папка.'],[50,91,'Свободно','Сколько места осталось и сколько всего на накопителе.']]],
+play:['Плеер',[[40,8,'Название','Трек и исполнитель в заголовке.'],[50,43.7,'Обложка','Берётся из тегов файла.'],[50,77.3,'Шкала времени','Перемотка и время трека.'],[50,86.6,'Ручка плейлиста','Потяните вверх: список выдвинется над кнопками, а строка управления останется на экране.'],[30,91.2,'Повтор','Режимы повтора трека и плейлиста.'],[70,91.2,'Перемешивание','Случайный порядок треков.']]],
+imgedit:['Редактор изображений',[[37,8.6,'Отмена','Шаг назад по правкам.'],[10,81.3,'Перо','Рисунок от руки.'],[59,81.3,'Текст','Подпись поверх изображения.'],[91,81.3,'Обрезка','Кадрирование нужной области.'],[50,86.7,'Палитра цветов','Любой цвет и толщина линии.']]],
+playlist:['Плейлист',[[50,14.2,'Плейлист выдвинут','Ручка тянет список вверх, а кнопки управления остаются под ним.'],[26,18.5,'Группа','Треки сгруппированы по папкам.'],[31,23,'Трек','Название, исполнитель и длительность.'],[50,91,'Управление','Строка кнопок всегда на экране.']]],
+writer:['Карточки',[[26,25,'Папки-карточки','Крупные плитки: удобно, когда в папке мало, но важных разделов.']]],
+gallery:['Галерея',[[33,20,'Миниатюры','Изображения из всех папок плотной сеткой.']]],
+activity:['Activity Manager',[[28,15,'Фильтры','Пользовательские, системные и все приложения.'],[28,21.5,'Приложение','Тап — список его Activity и запуск.']]],
+app:['Приложения',[[26,15,'Фильтры','user, system, reserved, all и disabled.'],[28,21.5,'Плитка приложения','Название, пакет и размер.']]],
+calc:['Калькулятор',[[92,26,'Дисплей','Результат крупно, режим градусов — слева.'],[9,37.4,'Научные функции','sin, cos, tan, гиперболические и обратные.'],[91,87.7,'Равно','Вычисляет выражение.']]],
+calendar:['Календарь',[[33.5,14.8,'Год','Все двенадцать месяцев на одном экране.'],[42,77,'Сегодня','Текущий день подсвечен.']]],
+birthday:['Дни рождения',[[12,17,'Фото','Фото контакта и дата рождения.'],[80,15.5,'Сколько осталось','До ближайшей даты — в неделях и месяцах.']]],
+cards:['Дисконтные карты',[[23,17,'Карточка магазина','Цветная плитка: тап — показать код.']]],
+converter:['Конвертер единиц',[[30,16,'Категории','Длина, масса, площадь, объём, температура и другие.'],[20,55,'Данные','От бит до терабайт.']]],
+bmi:['Индекс массы тела',[[49,32,'Результат','Значение ИМТ крупно.'],[49,40.6,'Категория','Оценка по шкале ВОЗ и диапазон нормы.'],[49,54,'Рост и вес','Введите значения — результат обновится сразу.']]],
+ruler:['Линейка',[[10,41,'Шкала','Миллиметры и сантиметры на экране.'],[90,89.7,'Меню','Калибровка, подписи и режимы.']]],
+scaner:['Сканер кодов',[[50,47,'Код','QR и штрихкоды с камеры или из изображения.'],[19.5,83.9,'Действия','Копировать, поделиться или открыть.'],[50,90,'Сканировать снова','Следующий код.']]],
+sound:['Шумомер',[[49,22.8,'Уровень шума','Значение в дБ и словесная оценка.'],[49,42.8,'Максимум','Тап — сбросить.'],[49,54.8,'График','История измерений.']]],
+vibro:['Виброметр',[[50,22.8,'Вибрация','Интенсивность и оценка.'],[50,35.5,'Частота','Основная частота колебаний.'],[50,57,'Оси X Y Z','График акселерометра по трём осям.']]]};
+const PD={
+writer:'Режим карточек: крупные плитки папок для быстрого выбора.',
+playlist:'Плейлист плеера: треки сгруппированы по папкам, строка кнопок остаётся на экране.',
+gallery:'Галерея: изображения из всех папок плотной сеткой.',
+activity:'Activity Manager: список Activity приложений, запуск и копирование имени класса.',
+app:'Приложения: пакеты в цветных плитках с фильтрами.',
+calc:'Научный калькулятор: тригонометрия, степени, память.',
+calendar:'Календарь: весь год на одном экране.',
+birthday:'Дни рождения: фото, дата и сколько осталось до события.',
+cards:'Дисконтные карты: карты магазинов цветными плитками.',
+converter:'Конвертер: двенадцать категорий величин и десятки единиц.',
+bmi:'Индекс массы тела: категория по шкале ВОЗ и диапазон нормального веса.',
+ruler:'Линейка: миллиметры и сантиметры на экране с калибровкой.',
+scaner:'Сканер кодов: QR и штрихкоды с камеры или из изображения.',
+sound:'Шумомер: уровень в дБ, максимум и график.',
+vibro:'Виброметр: вибрация по трём осям, частота и пик.'};
+function phone(el,keys){el.innerHTML=`<div class="scr">${keys.map((k,i)=>`<img src="img/sc.${k}.jpg" alt="${SC[k][0]}" data-k="${k}" ${i?'loading="lazy"':''} class="${i?'':'on'}">`).join('')}</div>`+keys.map((k,i)=>`<div class="hl ${i?'':'on'}" data-k="${k}">${SC[k][1].map(h=>`<button type="button" class="hs" style="left:${h[0]}%;top:${h[1]}%" data-h="${h[2]}" data-t="${h[3]}" aria-label="${h[2]}: ${h[3]}"></button>`).join('')}</div>`).join('')}
+function show(el,k){el.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('on',e.dataset.k==k))}
+phone($('#hp'),['grid']);phone($('#sp'),['main','drawer','memory','play','imgedit']);
+$('#gs').innerHTML=[['writer','Карточки'],['playlist','Плейлист'],['gallery','Галерея'],['activity','Activity Manager'],['app','Приложения'],['calc','Калькулятор'],['calendar','Календарь'],['birthday','Дни рождения'],['cards','Дисконтные карты'],['converter','Конвертер'],['bmi','Индекс массы тела'],['ruler','Линейка'],['scaner','Сканер кодов'],['sound','Шумомер'],['vibro','Виброметр']].map(a=>`<figure><div class="phone" data-g="${a[0]}"></div><figcaption>${a[1]}</figcaption></figure>`).join('');
+$$('[data-g]').forEach(e=>phone(e,[e.dataset.g]));
+/* tooltips */
+const tip=$('#tip'),hov=matchMedia('(hover:none)').matches;let cur=null;
+function showTip(b){cur=b;tip.innerHTML=`<b>${b.dataset.h}</b>${b.dataset.t}`;tip.classList.add('on');const r=b.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;tip.style.left=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2))+'px';let y=r.top-h-12;if(y<8)y=r.bottom+12;tip.style.top=y+'px'}
+function hideTip(){cur=null;tip.classList.remove('on')}
+document.addEventListener('pointerover',e=>{const b=e.target.closest('.hs');if(b&&e.pointerType=='mouse')showTip(b)});
+document.addEventListener('pointerout',e=>{if(e.target.closest('.hs')&&e.pointerType=='mouse')hideTip()});
+document.addEventListener('focusin',e=>{const b=e.target.closest('.hs');b?showTip(b):hideTip()});
+document.addEventListener('click',e=>{const b=e.target.closest('.hs');if(!b){if(hov&&e.target.closest('#gs .phone'))return;return hideTip()}(hov&&cur===b)?hideTip():showTip(b)});
+function pageTip(k,x,y,mid){cur=null;tip.innerHTML=`<b>${SC[k][0]}</b>${PD[k]}`;tip.classList.add('on');const w=tip.offsetWidth,h=tip.offsetHeight;let l,t;if(mid){l=x-w/2;t=y-h-22;if(t<8)t=y+22}else{l=x+16;t=y+18;if(l+w>innerWidth-8)l=x-w-16;if(t+h>innerHeight-8)t=y-h-14}tip.style.left=Math.max(8,Math.min(innerWidth-w-8,l))+'px';tip.style.top=Math.max(8,t)+'px'}
+const gsE=$('#gs');
+gsE.addEventListener('pointermove',e=>{if(e.pointerType!='mouse'||e.target.closest('.hs'))return;const p=e.target.closest('.phone');p?pageTip(p.dataset.g,e.clientX,e.clientY):hideTip()});
+gsE.addEventListener('pointerleave',e=>{if(e.pointerType=='mouse')hideTip()});
+gsE.addEventListener('click',e=>{if(!hov||e.target.closest('.hs'))return;const p=e.target.closest('.phone');if(p)pageTip(p.dataset.g,e.clientX,e.clientY,true)});
+addEventListener('scroll',hideTip,{passive:true});
+/* story */
+const sp=$('#sp'),SK={a:'main',b:'drawer',c:'memory',d:'play',e:'imgedit'};
+function setStep(k){show(sp,SK[k]);$$('.step').forEach(e=>e.classList.toggle('on',e.dataset.s==k))}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setStep(e.target.dataset.s)}),{rootMargin:'-45% 0px -45% 0px'});
+$$('.step').forEach(e=>io.observe(e));
+/* manifesto words */
+const mp=$('#man p');mp.innerHTML=[...mp.childNodes].map(n=>n.nodeType==3?n.textContent.split(/(\s+)/).map(w=>w.trim()?`<span>${w}</span>`:w).join(''):`<b style="font-weight:inherit">${n.textContent.split(' ').map(w=>`<span class="g">${w}</span>`).join(' ')}</b>`).join('');
+const words=$$('#man span');
+/* memory scan */
+const wf=$('#wf'),N=96,H=[];
+for(let i=0;i<N;i++){const h=14+80*Math.pow(Math.abs(Math.sin(i*.29)*Math.cos(i*.07+1)),1.4)+10*Math.abs(Math.sin(i*1.9));const b=document.createElement('i');b.style.height=Math.min(100,h)+'%';wf.insertBefore(b,$('#ph2'));H.push(b)}
+let t0=performance.now();const TOT=4.21;
+function wave(now){const T=8000,HOLD=1800,e=(now-t0)%(T+HOLD),p=Math.min(1,e/T);$('#ph2').style.left=p*100+'%';H.forEach((b,i)=>b.classList.toggle('in',i/N<p));$('#n').textContent=(TOT*p).toFixed(2).replace('.',',');requestAnimationFrame(wave)}
+requestAnimationFrame(wave);
+/* counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const n=+e.target.dataset.n,s=performance.now();(function f(t){const p=Math.min(1,(t-s)/1600);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p>=1&&e.target.dataset.s||'');if(p<1)requestAnimationFrame(f)})(s)}),{threshold:.6});
+$$('[data-n]').forEach(e=>cio.observe(e));
+/* scroll: parallax, progress, words */
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let tick=0;
+function onScroll(){const vh=innerHeight;$('#bar').style.transform=`scaleX(${scrollY/(document.documentElement.scrollHeight-vh)})`;
+if(!rm)$$('[data-p]').forEach(e=>{const r=e.parentElement.getBoundingClientRect();e.style.translate=`0 ${(r.top+r.height/2-vh/2)*+e.dataset.p}px`});
+const r=$('#man').getBoundingClientRect(),p=Math.min(1,Math.max(0,(vh*.8-r.top)/(r.height+vh*.2)));
+words.forEach((w,i)=>w.classList.toggle('l',i/words.length<p*1.05))}
+addEventListener('scroll',()=>{if(!tick)tick=requestAnimationFrame(()=>{tick=0;onScroll()})},{passive:true});onScroll();
+/* cursor glow */
+if(matchMedia('(pointer:fine)').matches&&!rm)addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+/* pulses: hero/story — one dot at a time per screen; gallery — random dot on a random screenshot, never two at once on one screen */
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+const vis=h=>{const r=h.getBoundingClientRect();return r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth};
+const fire=x=>{if(x.classList.contains('pu'))return;x.classList.add('pu');setTimeout(()=>x.classList.remove('pu'),2900)};
+let lastG=null;
+setInterval(()=>{
+$$('.hl.on').forEach(h=>{if(h.closest('#gs')||!vis(h))return;const hs=[...h.querySelectorAll('.hs')];if(!hs.length)return;h._i=((h._i==null?-1:h._i)+1)%hs.length;fire(hs[h._i])});
+let g=$$('#gs .hl').filter(h=>vis(h)&&!h.querySelector('.hs.pu'));if(g.length>1&&lastG)g=g.filter(h=>h!==lastG);
+if(g.length){const h=g[Math.random()*g.length|0],hs=[...h.querySelectorAll('.hs')];lastG=h;if(hs.length)fire(hs[Math.random()*hs.length|0])}
+},1000)}
+/* ambient music: starts silent, rises very slowly */
+(function(){const au=$('#bgm'),sb=$('#snd'),TARGET=.1,RAMP=60000,TICK=400;let muted=false,prog=0,f=0,g=null,ok=false;
+try{muted=localStorage.getItem('fm-mute')=='1'}catch(e){}
+au.volume=.5;if(au.volume!==.5){try{const c=new(window.AudioContext||window.webkitAudioContext)();g=c.createGain();g.gain.value=0;c.createMediaElementSource(au).connect(g);g.connect(c.destination);g.ctx=c}catch(e){}}
+const setV=v=>{if(g)g.gain.value=v;else au.volume=Math.max(0,Math.min(1,v))};setV(0);
+function ui(){sb.classList.toggle('mut',muted);sb.setAttribute('aria-pressed',muted);sb.setAttribute('aria-label',muted?'Включить музыку':'Выключить музыку')}
+function start(){if(muted||!au.paused)return;if(g&&g.ctx.state=='suspended')g.ctx.resume();au.play().then(()=>{ok=true}).catch(()=>{})}
+setInterval(()=>{if(muted||au.paused)return;prog=Math.min(RAMP,prog+TICK);f=Math.min(1,f+TICK/2500);const p=prog/RAMP;setV(TARGET*p*p*f)},TICK);
+['pointerdown','keydown','touchend'].forEach(ev=>addEventListener(ev,start,{passive:true}));
+sb.addEventListener('click',e=>{e.stopPropagation();muted=!muted;try{localStorage.setItem('fm-mute',muted?'1':'0')}catch(x){}if(muted){au.pause();f=0}else start();ui()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)au.pause();else if(ok)start()});
+ui();start()})();
+</script>
+<script>
+/* Счётчик скачиваний APK: берём download_count из релизов GitHub (воркер не нужен) */
+(()=>{
+const START=0;     /* число, с которого начинаем */
+const BASELINE=0;   /* сколько скачиваний GitHub уже насчитал на момент запуска счётчика */
+const API='https://api.github.com/repos/brandmauer/brandmauer.github.io/releases?per_page=100';
+const out=document.getElementById('dlcount');
+if(!out)return;
+const show=n=>{out.textContent=(START+Math.max(0,n-BASELINE)).toLocaleString('ru-RU')};
+const total=rels=>rels.reduce((t,r)=>t+(r.assets||[]).filter(a=>a.name==='filarix.apk').reduce((x,a)=>x+a.download_count,0),0);
+try{const c=JSON.parse(localStorage.getItem('dlc')||'null');
+  if(c&&Date.now()-c.t<6e5){show(c.n);return}}catch(e){}
+fetch(API).then(r=>r.json()).then(d=>{
+  const n=total(d);show(n);
+  try{localStorage.setItem('dlc',JSON.stringify({t:Date.now(),n}))}catch(e){}
+}).catch(()=>{});
+})();
+</script>
+
+</body></html>
